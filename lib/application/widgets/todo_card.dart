@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:todoapps/domain/entity/todo.dart';
 
 class TodoCard extends StatelessWidget {
-  const TodoCard({super.key, required this.item, required this.onTap, required this.onTapStatus});
+  const TodoCard(
+      {super.key,
+      required this.item,
+      required this.onTap,
+      required this.onTapStatus});
   final ToDoEntity item;
   final VoidCallback onTap;
   final VoidCallback onTapStatus;
@@ -42,8 +46,9 @@ class TodoCard extends StatelessWidget {
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(
-                            color:
-                                item.status ?? false ? Colors.blue : Colors.grey,
+                            color: item.status ?? false
+                                ? Colors.blue
+                                : Colors.grey,
                             width: 1.0,
                           ),
                         ),
@@ -68,7 +73,7 @@ class TodoCard extends StatelessWidget {
                           height: 8,
                         ),
                         Text(
-                          item.title??"",
+                          item.title ?? "",
                           style: const TextStyle(fontSize: 16),
                         ),
                         Text(
